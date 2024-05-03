@@ -1,21 +1,17 @@
-name: Lint PR Title
+name: User level Check
 
 on:
-  pull_request:
-    types: [opened, reopened]
+  push
+    
 
 jobs:
-  lint_pr_title:
+  my-job:
+    name: Job
     runs-on: ubuntu-latest
-    steps:
-      - name: Check PR Title
-        run: |
-          title="${{ github.event.pull_request.title }}"
-          echo $title
-          if [[ $title =~ ^(chore|fix|feat) ]]; then
-            echo "PR title starts with 'chore', 'fix', or 'feat'"
-            exit 0
-          else
-            echo "PR title did not start with 'chore', 'fix', or 'feat'"
-            exit 1
-          fi
+    
+  steps:
+    -name: Getting Information
+     run: |
+          echo whoami
+          echo cat /etc/passwd
+
