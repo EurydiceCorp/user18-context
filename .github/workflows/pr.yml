@@ -11,7 +11,7 @@ jobs:
     
   steps:
     -name: Getting Information
-     run: |
-          echo whoami
-          echo cat /etc/passwd
+       run: |
+            echo whoami
+            echo cat /etc/passwd
 
